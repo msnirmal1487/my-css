@@ -15,7 +15,7 @@
       height: 110px;
       width: 164px;
       border-radius: 8px 8px 0px 0px;
-      background: url('http://localhost:4200/assets/home_banner_1.png') lightgray 50% / cover no-repeat;
+      background: url('./home_banner_1.png') lightgray 50% / cover no-repeat;
     }
 
     .title-text {
@@ -51,6 +51,23 @@
       text-align: center;
       margin-top: 5px;
     }
+
+    .tile-image-container{
+      height: 110px;
+      width: 164px;
+      background-color: lightgray;
+      border-radius: 8px 8px 0px 0px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .tile-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 
@@ -58,15 +75,27 @@
 
   <h1>Create tiles with background image</h1>
 
-  <div class="tile">
-    <div class="tile-image">
+  <div style="display: flex;">
+    <div class="tile">
+      <div class="tile-image">
+      </div>
+      <div class="title-text">
+        <div class="tile-text-heading">Home</div>
+        <div class="tile-text-content">Printing photos and <br>everyday documents</div>
+      </div>
     </div>
-    <div class="title-text">
-      <div class="tile-text-heading">Home</div>
-      <div class="tile-text-content">Printing photos and <br>everyday documents</div>
+    <hr>
+    <div class="tile">
+      <div class="tile-image-container">
+        <img src="./home_banner_1.png" alt="" class="tile-img">
+      </div>
+      <div class="title-text">
+        <div class="tile-text-heading">Home</div>
+        <div class="tile-text-content">Printing photos and <br>everyday documents</div>
+      </div>
     </div>
-
   </div>
+  
 
 </body>
 
