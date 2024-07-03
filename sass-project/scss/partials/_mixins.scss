@@ -1,0 +1,74 @@
+@mixin google-font($font) {
+  $font: unquote($string: $font);
+  @import url(https://fonts.googleapis.com/css?family=#{$font});
+}
+
+@mixin tiny-screens() {
+  @media only screens and (max-width: 320px){
+    @content;
+  }
+}
+
+@mixin small-screens() {
+  @media only screens and (max-width: 480px){
+    @content;
+  }
+}
+
+@mixin medium-screens() {
+  @media only screens and (max-width: 680px){
+    @content;
+  }
+}
+
+@mixin large-screens() {
+  @media only screens and (max-width: 960px){
+    @content;
+  }
+}
+
+@mixin warning {
+  background-color: orange;
+  color: white;
+
+  &:hover {
+    background-color: lighten($color: orange, $amount: 10%);
+  }
+
+}
+
+@mixin large-text {
+  font: {
+    size: 22px;
+    weight: bold
+  }
+}
+
+@mixin rounded($radius: 6px) {
+  border-radius: $radius;
+}
+
+@mixin box($radius: 8px, $border: 1px solid #333) {
+  @include rounded($radius);
+  border: $border;
+}
+
+@mixin fancy-links {
+  a {
+    font-style: italic;
+    text-decoration: none;
+  }
+}
+
+@mixin box-shadow($shadows...) {
+  box-shadow: $shadows;
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+}
+
+@mixin apply-to-ie-6 {
+  * html {
+    @content;
+  }
+}
+
